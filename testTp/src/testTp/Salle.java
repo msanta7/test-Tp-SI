@@ -7,7 +7,9 @@ public class Salle {
 	{
 		this.codeSalle=codeSalle+num;
 	}
-
-	
+	@Override
+	public String toString() {
+		return "Salle [codeSalle=" + codeSalle + "]";
+	}
 
 }
