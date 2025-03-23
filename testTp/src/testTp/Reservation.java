@@ -4,18 +4,20 @@ import java.time.LocalDateTime;
 import java.util.Random;
 
 public class Reservation {
-	Random rand=new Random();
-	int id=rand.nextInt(1000);
+	Random rand = new Random();
+	int id;
 	String nomEmp;
 	int dureeReservation;
 	LocalDateTime debut;
-	
-	public Reservation(int id, String nomEmp, int dureeReservation, LocalDateTime debut) {
+	String salle; 
+
+	public Reservation(int id, String nomEmp, int dureeReservation, LocalDateTime debut, String salle) {
 		super();
-		this.id = id;
+		this.id = rand.nextInt(100);
 		this.nomEmp = nomEmp;
 		this.dureeReservation = dureeReservation;
 		this.debut = debut;
+		this.salle = salle;
 	}
 
 	public int getId() {
@@ -49,8 +51,23 @@ public class Reservation {
 	public void setDebut(LocalDateTime debut) {
 		this.debut = debut;
 	}
-	
-	
-	
 
+	public String getSalle() {
+		return salle;
+	}
+
+	public void setSalle(String salle) {
+		this.salle = salle;
+	}
+
+	@Override
+	public String toString() {
+        return "Reservation{" +
+                "id=" + id +
+                ", nomEmp='" + nomEmp + '\'' +
+                ", dureeReservation=" + dureeReservation +
+                ", debut=" + debut +
+                ", salle='" + salle + '\'' +
+                '}';
+    }
 }
