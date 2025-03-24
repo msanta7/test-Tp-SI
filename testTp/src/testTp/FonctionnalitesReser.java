@@ -37,19 +37,17 @@ public class FonctionnalitesReser {
 	}
 	
 	public void modifierRes(int id, String nomEmp, int dureeReservation, LocalDateTime debut) throws ReservationNonTrouve {
-		boolean found = false;
+
 		for (Reservation res : reserv) {
 			if (res.getId() == id) {
 				res.setDebut(debut);
 				res.setDureeReservation(dureeReservation);
 				res.setNomEmp(nomEmp);
-				found = true;
 				break;
 			}
-		}
-		if (!found) {
 			throw new ReservationNonTrouve("reservation introuvable");
 		}
+		
 	}
 	
 	public void doubleReservCheck(int id) {
